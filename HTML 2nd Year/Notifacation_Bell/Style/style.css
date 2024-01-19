@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 15rem;
+}
+
+.button{
+    border: none;
+    outline: none;
+    background: palegreen;
+    color:black;
+    font-size: 1.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    box-shadow: 5px 5px 10px palegreen;
+    border-radius: 20px;
+    text-align: center;
+    z-index: 1;
+    transition: 0.5s;
+    
+    &.active{
+        transform:translate(5%, 5%);
+        box-shadow: 0px 0px 0px palegreen;
+    }
+}
+
+.notification{
+    width: 10px;
+    padding-left: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: transparent;
+
+
+    &::after{
+        min-width: 20px;
+        min-height: 20px;
+        content: attr(data-count);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        background-color: rgb(222, 66, 66);
+        border-radius: 50%;
+        position: absolute;
+        top: -4px;
+        right:7px;
+        transition: 0,3s;
+        opacity: 0;
+        transform: scale(0.5);
+
+    }
+
+
+
+    &::before{
+        content: '\f0f3';
+        font-family: 'Font Awesome 5 Free';
+        display: block;
+        color: rgb(225, 230, 65);
+        font-size: 3rem;
+    }
+
+    &.count::after{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    &.notify::before{
+        animation: belltiling 1s ease-in-out;
+
+    }
+}
+
+@keyframes belltiling{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: rotate(-15deg);
+    }
+    75%{
+        transform: rotate(15deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
