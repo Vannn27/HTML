@@ -1,0 +1,45 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(#7ec6ce, #f0f05d);
+}
+
+.letters {
+    perspective: 1000px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(187, 53, 111);
+
+    .letter {
+        overflow: hidden;
+        cursor: pointer;
+        display: inline-block;
+        user-select: none;
+        line-height: 0.8;
+        font-size: 5rem;
+
+        &.active {
+            animation: jump 1s ease-in-out;
+            transform-origin: bottom left;
+
+        }
+
+    }
+}
+
+@keyframes jump {
+    0% {
+        transform: translate(0, 0) rotate(180deg);
+    }
+    25% {
+        transform: scale(2) translate(0, -150px);
+    }
+    75% {
+        transform: scale(1.1, 1.1) translate(0,200px);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
