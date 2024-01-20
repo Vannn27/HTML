@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Notifacation_Bell"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Scroll_Indicator"
+	}
+}
