@@ -1,0 +1,33 @@
+body{
+    background-image: url("./bg.jpg");
+    background-position: center; /* centers the background image */
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;  /* centers the logo and text in webpage (maybe everything else too..) */
+    color: #0c67ae;
+}
+
+#title{
+    height: 120px; /* changes logo height and weight */
+    width: 240px;
+}
+
+#board{  /* Adjusts the board size and color */
+    width: 360px;
+    height: 360px;
+    background-color: lightblue;
+    border: 10px solid #0c67ae;
+
+    margin: 0 auto; /* centers the board */
+    display:flex; /* makes the board a flexbox */
+    flex-wrap: wrap; /* allows the board to wrap around */
+}
+
+#board img{
+    width: 118px; /* changes the size of the images */
+    height: 118px;
+    border: 1px solid #0c67ae;
+}
+
+
+
+

@@ -5,9 +5,12 @@
 		},
 		{
 			"path": "../Notifacation_Bell"
+		},
+		{
+			"path": "../Seatwork_Slide_Puzzle"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Scroll_Indicator"
+		"liveServer.settings.multiRootWorkspaceName": "Seatwork_Slide_Puzzle"
 	}
 }
