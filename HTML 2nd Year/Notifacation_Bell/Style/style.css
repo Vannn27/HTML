@@ -5,7 +5,7 @@
 }
 
 body{
-    background: linear-gradient(90deg, #48db2a 0%, #6e1bcc 100%);
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,8 +13,11 @@ body{
 }
 
 .container{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding-top: 10rem;
+    flex-direction: column;
+    padding-top: 15rem;
 }
 
 .button{
@@ -46,7 +49,6 @@ body{
     align-items: center;
     position: relative;
     color: transparent;
-    z-index: 100;
 
 
     &::after{
@@ -61,10 +63,11 @@ body{
         border-radius: 50%;
         position: absolute;
         top: -4px;
-        right:-7px;
+        right:7px;
         transition: 0,3s;
         opacity: 0;
         transform: scale(0.5);
+
     }
 
 
@@ -75,9 +78,6 @@ body{
         display: block;
         color: rgb(225, 230, 65);
         font-size: 3rem;
-        margin-bottom: -2rem;
-        margin-right: -1.5rem;
-        padding-left: 1rem;
     }
 
     &.count::after{

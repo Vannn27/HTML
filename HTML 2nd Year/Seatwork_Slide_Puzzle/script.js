@@ -11,6 +11,40 @@ var turns = 0;
 var imgOrder = ["1", "9", "4", "8", "6", "2", "5", "7", "3"];
 
 window.onload = function() {
+            const coords = {x: 0, y: 0}; //initialize the x and y coordinates of the mouse
+            const circles = document.querySelectorAll(".circle");
+            circles.forEach(function (circle){
+                circle.x = 0;
+                circle.y = 0; //initialize the x and y coordinates of the circles
+            });
+            
+            window.addEventListener("mousemove", function(e){
+                coords.x = e.clientX;
+                coords.y = e.clientY; //get the x and y coordinates of the mouse
+            
+                animatecircles();
+            });
+
+            function animatecircles(){
+
+                let x = coords.x;
+                let y = coords.y;
+
+                circles.forEach(function (circle, index){
+                    circle.style.left = coords.x -12 + "px";
+                    circle.style.top = coords.y -12 + "px"; //move the circle to the x and y coordinates of the mouse
+                    circle.x = x;
+                    circle.y = y; //update the x and y coordinates of the circles
+
+                    const nextCircle = circles[index + 1] || circles[0];
+                    x += (nextCircle.x - circle.x) * 0.3;
+                    y += (nextCircle.y - circle.y) * 0.3; //move the circles to the next circle
+                    
+                });
+            }
+
+
+
     for(let r=0; r < rows; r++){
         for (let c=0; c < columns; c++){
 
@@ -25,7 +59,6 @@ window.onload = function() {
             tile.addEventListener("dragleave", dragLeave); //dragging image leaves the image
             tile.addEventListener("drop", dragDrop); //drag an image ontoanother image, drop the image
             tile.addEventListener("dragend", dragEnd); //after drag drop, swap the two tiles
-
             document.getElementById("board").appendChild(tile);
         }
     }
@@ -33,10 +66,12 @@ window.onload = function() {
 
 function dragStart(){
     currTile = this; //this refers to the img tile being dragged
+    this.style.opacity = '0.4'; //change the opacity of the tile being dragged
 }
 
 function dragOver(e){
     e.preventDefault();
+    this.style.background = 'lightgreen';
 }
 
 function dragEnter(e){
@@ -44,14 +79,16 @@ function dragEnter(e){
 }
 
 function dragLeave(){
-
+    this.style.background = '';
 }
 
 function dragDrop(){
     otherTile = this; //this refers to the img tile being dropped onto
+    this.style.background = '';
 }
 
 function dragEnd(){
+    this.style.opacity = '';
     if (!otherTile.src.includes("9.png")){ //if the other tile is not the blank tile
         return; //do nothing
     }
@@ -82,3 +119,6 @@ function dragEnd(){
     document.getElementById("turns").innerText = turns;
     }
 }
+
+
+

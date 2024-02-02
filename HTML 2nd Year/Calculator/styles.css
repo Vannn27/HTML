@@ -1,0 +1,60 @@
+body {
+    background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calculator {
+    border-radius: 5px;
+    padding: 20px;
+    background: rgb(115, 233, 209);
+}
+
+#display {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 20px;
+    font-size: 20px;
+    border: none; /* Remove the border */
+    background: rgb(115, 233, 209); /* Set the background color to white, same as the calculator */
+    color: black; /* Set the text color to black for visibility */
+}
+button:hover {
+    color: white; /* Change the text color to white */
+    transform: scale(1.1); /* Make the text slightly larger */
+    transition: all 0.3s ease; /* Add a transition */
+}
+button.zero {
+    grid-column: span 2;
+}
+button.equal{
+    grid-row: span 2;
+}
+
+button span {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+button:hover span {
+    transform: scale(1.6);
+}
+
+@keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}

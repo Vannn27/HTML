@@ -1,0 +1,65 @@
+body {
+    background-color: beige;
+    overflow: hidden; /* Hide the scrollbar */
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start; /* Align container to the start (left side) of the page */
+    height: 100vh;
+    align-items: center; /* Align items to the center vertically */
+    padding-left: 350px; /* Add some padding to the left side of the container */
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;;
+}
+
+.day-button {
+    height: 80px;
+    width: 140px;
+    margin: 20px;
+    padding: 20px; /* Add some padding to make the buttons look like boxes */
+    background-color: #f0f0f0; /* Set a default background color */
+    transition: all 0.5s; /* Add a transition for the hover animation */
+    border: none;
+    border-radius: 9px;
+}
+
+/* Set a different background color for each button */
+#Monday { background-color: red; color: #f0f0f0; }
+#Tuesday { background-color: orange; }
+#Wednesday { background-color: yellow; }
+#Thursday { background-color: green; }
+#Friday { background-color: blue; color: #f0f0f0; }
+#Saturday { background-color: indigo; color: #f0f0f0; }
+#Sunday { background-color: violet; }
+
+/* Add a hover animation */
+.day-button:hover {
+    transform: scale(1.1); /* Make the button slightly larger */
+}
+
+#box {
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    position: absolute;
+    left: 45%;
+    top: 0;
+    transition: all 2s;
+}
+
+
+@media (max-width: 600px) {
+    #box {
+        width: 200px;
+        height: 200px;
+        left: 100px;
+    }
+
+    .day-button {
+        padding: 10px;
+    }
+}
